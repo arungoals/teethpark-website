@@ -75,7 +75,30 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 500px;
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 }

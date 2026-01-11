@@ -31,12 +31,42 @@ const AdminDashboard = () => {
     const [consultationFee, setConsultationFee] = useState(100);
     const [testimonialText, setTestimonialText] = useState('');
 
-    const handleFeeUpdate = () => {
-        alert(`Consultation Fee updated to ₹${consultationFee}`);
+    // Fetch initial settings
+    useEffect(() => {
+        if (isAuthenticated) {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            fetch(`${API_URL}/api/settings`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.consultationFee) setConsultationFee(data.consultationFee);
+                })
+                .catch(err => console.error("Failed to load settings:", err));
+        }
+    }, [isAuthenticated]);
+
+    const handleFeeUpdate = async () => {
+        try {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            const res = await fetch(`${API_URL}/api/settings/fee`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fee: consultationFee })
+            });
+            const data = await res.json();
+            if (data.success) {
+                alert(`Consultation Fee updated to ₹${data.fee}`);
+            } else {
+                alert('Failed to update fee');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Error updating fee');
+        }
     };
 
-    const handleAddTestimonial = () => {
-        alert('Testimonial added! (Simulated)');
+    const handleAddTestimonial = async () => {
+        // Todo: Implement API for testimonials
+        alert('Testimonials API coming soon!');
         setTestimonialText('');
     };
 

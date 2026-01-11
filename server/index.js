@@ -7,11 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 5002; // Use 5002 to avoid conflict with default Vite or other apps
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: '*' })); // Allow all origins for mobile/testing
 app.use(express.json());
 
 // Routes
 app.use('/api/chat', require('./routes/api/chat'));
+app.use('/api/settings', require('./routes/api/settings')); // New CMS Route
 // app.use('/api/booking', require('./routes/api/booking')); // Todo
 
 // Serve static assets in production

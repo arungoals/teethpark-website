@@ -1,6 +1,23 @@
+import { useState, useEffect } from 'react';
 import ServiceCard from '../components/ServiceCard';
 
 const Services = () => {
+    const [fee, setFee] = useState(100);
+
+    useEffect(() => {
+        const fetchFee = async () => {
+            try {
+                const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+                const res = await fetch(`${API_URL}/api/settings`);
+                const data = await res.json();
+                if (data.consultationFee) setFee(data.consultationFee);
+            } catch (err) {
+                console.error("Failed to load fee", err);
+            }
+        };
+        fetchFee();
+    }, []);
+
     const services = [
         {
             title: "Pediatric Dentistry",
@@ -45,7 +62,7 @@ const Services = () => {
                         fontWeight: '600',
                         color: 'var(--color-primary)'
                     }}>
-                        Consultation starts at ₹100
+                        Consultation starts at ₹{fee}
                     </div>
                 </div>
 
