@@ -17,24 +17,20 @@ router.post('/', async (req, res) => {
             });
         }
 
-        // Use the standard Flash model
-        const model = genAI.getGenerativeModel({
-            model: "gemini-1.5-flash",
-            systemInstruction: {
-                role: "system",
-                parts: [{
-                    text: `You are the AI Concierge for TeethPark Dental Clinic...
-    (Context: Dr. C G Madhan, Pediatric, Kovur, Chennai. 
-     Services: Kids, Ortho, RCT. 
-     Hours: Mon-Sat 4-9pm, Sun 10am-1pm. 
-     Phone: +91 94868 46534. Fee: ₹100.)
-    Be warm, professional, use Indian English. 
-    Answer concisely.` }]
-            }
-        });
+        // User's key is authorized for 2.0 series but not 1.5
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+        const systemPrompt = `You are the AI Concierge for TeethPark Dental Clinic in Kovur, Chennai.
+        Dr. Madhan (Pediatric Dentist). Mon-Sat 4-9pm, Sun 10am-1pm.
+        Fee: ₹100. Phone: +91 94868 46534.
+        Be warm and concise.`;
 
         const chat = model.startChat({
-            history: history || [], // Use actual history from frontend if available
+            history: [
+                { role: "user", parts: [{ text: systemPrompt }] },
+                { role: "model", parts: [{ text: "Understood. I'm ready to help." }] },
+                ...(history || [])
+            ]
         });
 
         const result = await chat.sendMessage(message);
