@@ -1,8 +1,8 @@
 import '../styles/FloatingWhatsApp.css';
 
 const FloatingWhatsApp = () => {
-    const phoneNumber = "919999999999";
-    const message = "Hi TeethPark, I would like to book an appointment.";
+    const phoneNumber = "919486846534";
+    const message = "Hi Dr. Madhan, I would like to book an appointment.";
     const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (

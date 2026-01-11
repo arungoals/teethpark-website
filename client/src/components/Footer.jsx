@@ -28,16 +28,17 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>Hours</h4>
                     <p>Mon - Sat: 4:00 PM - 9:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Sun: 10:00 AM - 10:00 PM</p>
+                    <p style={{ fontSize: '0.8rem' }}>(Call before visit)</p>
                 </div>
 
                 <div className="footer-section">
                     <h4>Contact</h4>
                     <p>
-                        <a href="tel:+919999999999">+91 999 999 9999</a>
+                        <a href="tel:+919486846534">+91 94868 46534</a>
                     </p>
                     <p>
-                        <a href="mailto:contact@teethpark.com">contact@teethpark.com</a>
+                        <a href="mailto:madhancg@gmail.com">madhancg@gmail.com</a>
                     </p>
                 </div>
             </div>

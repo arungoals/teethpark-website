@@ -28,7 +28,20 @@ const AdminDashboard = () => {
         ));
     };
 
+    const [consultationFee, setConsultationFee] = useState(100);
+    const [testimonialText, setTestimonialText] = useState('');
+
+    const handleFeeUpdate = () => {
+        alert(`Consultation Fee updated to ₹${consultationFee}`);
+    };
+
+    const handleAddTestimonial = () => {
+        alert('Testimonial added! (Simulated)');
+        setTestimonialText('');
+    };
+
     if (!isAuthenticated) {
+        // ... (Login form remains same)
         return (
             <div className="login-container">
                 <form className="login-form" onSubmit={handleLogin}>
@@ -53,7 +66,8 @@ const AdminDashboard = () => {
             <div className="admin-sidebar">
                 <h3>TeethPark Admin</h3>
                 <button className={activeTab === 'appointments' ? 'active' : ''} onClick={() => setActiveTab('appointments')}> appointments</button>
-                <button className={activeTab === 'services' ? 'active' : ''} onClick={() => setActiveTab('services')}>Services (CMS)</button>
+                <button className={activeTab === 'services' ? 'active' : ''} onClick={() => setActiveTab('services')}>Services & Fees</button>
+                <button className={activeTab === 'testimonials' ? 'active' : ''} onClick={() => setActiveTab('testimonials')}>Testimonials</button>
                 <button onClick={() => setIsAuthenticated(false)}>Logout</button>
             </div>
             <div className="admin-content">
@@ -83,12 +97,35 @@ const AdminDashboard = () => {
                 )}
                 {activeTab === 'services' && (
                     <div className="services-view">
-                        <h2>Manage Services</h2>
-                        <p>CMS functionality to update service cards and pricing.</p>
-                        {/* CMS Placeholder */}
-                        <div className="cms-placeholder">
-                            Current Consultation Fee: <input type="number" defaultValue="100" />
-                            <button className="btn btn-sm btn-primary">Update</button>
+                        <h2>Manage Services & Pricing</h2>
+                        <div className="cms-card">
+                            <h3>Consultation Fee</h3>
+                            <div className="form-group">
+                                <label>Current Fee (₹)</label>
+                                <input
+                                    type="number"
+                                    value={consultationFee}
+                                    onChange={(e) => setConsultationFee(e.target.value)}
+                                />
+                                <button className="btn btn-primary" onClick={handleFeeUpdate}>Update Fee</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                {activeTab === 'testimonials' && (
+                    <div className="services-view">
+                        <h2>Manage Testimonials</h2>
+                        <div className="cms-card">
+                            <h3>Add New Testimonial</h3>
+                            <div className="form-group">
+                                <textarea
+                                    rows="4"
+                                    placeholder="Enter patient review..."
+                                    value={testimonialText}
+                                    onChange={(e) => setTestimonialText(e.target.value)}
+                                ></textarea>
+                                <button className="btn btn-primary" onClick={handleAddTestimonial} style={{ marginTop: '1rem' }}>Add Review</button>
+                            </div>
                         </div>
                     </div>
                 )}

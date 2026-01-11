@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import TestimonialSlider from '../components/TestimonialSlider';
 import beforeImg from '../assets/teeth_before.png';
 import afterImg from '../assets/teeth_after.png';
 
@@ -19,6 +20,8 @@ const Home = () => {
                     altAfter="Child's smile after treatment"
                 />
             </div>
+
+            <TestimonialSlider />
         </div>
     );
 };

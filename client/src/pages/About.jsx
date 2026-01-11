@@ -1,5 +1,5 @@
 import Timeline from '../components/Timeline';
-import profileImg from '../assets/dr_madhan_profile.png';
+import profileImg from '../assets/dr_madhan.jpg';
 
 const About = () => {
     const educationEvents = [
@@ -36,8 +36,8 @@ const About = () => {
                             src={profileImg}
                             alt="Dr. C G Madhan"
                             style={{
-                                width: '200px',
-                                height: '200px',
+                                width: '250px',
+                                height: '250px',
                                 borderRadius: '50%',
                                 objectFit: 'cover',
                                 border: '4px solid var(--color-white)',

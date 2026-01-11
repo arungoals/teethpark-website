@@ -22,15 +22,16 @@ const Contact = () => {
                         <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Hours</h3>
                         <ul style={{ listStyle: 'none', padding: 0, lineHeight: '1.8' }}>
                             <li><strong>Mon - Sat:</strong> 4:00 PM – 9:00 PM</li>
-                            <li style={{ color: 'var(--color-text-light)' }}><strong>Sunday:</strong> Closed</li>
+                            <li><strong>Sunday:</strong> 10:00 AM – 10:00 PM</li>
+                            <li style={{ fontSize: '0.9rem', color: 'var(--color-primary)', marginTop: '0.5rem' }}>(Please call before visiting on Sundays)</li>
                         </ul>
 
                         <div style={{ marginTop: '2rem' }}>
-                            <a href="tel:+919999999999" className="btn btn-primary" style={{ marginRight: '1rem' }}>
-                                Call Us Now
+                            <a href="tel:+919486846534" className="btn btn-primary" style={{ marginRight: '1rem' }}>
+                                Call Now
                             </a>
-                            <a href="mailto:contact@teethpark.com" className="btn btn-accent">
-                                Email Us
+                            <a href="mailto:madhancg@gmail.com" className="btn btn-accent">
+                                Send Email
                             </a>
                         </div>
                     </div>
