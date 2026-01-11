@@ -31,6 +31,7 @@ const ChatBot = () => {
 
         try {
             const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            console.log("ChatBot connecting to:", API_URL);
 
             const response = await fetch(`${API_URL}/api/chat`, {
                 method: 'POST',
