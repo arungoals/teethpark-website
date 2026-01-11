@@ -17,8 +17,8 @@ router.post('/', async (req, res) => {
             });
         }
 
-        // User's key is authorized for 2.0 series but not 1.5
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        // Reverting to the most stable model for the fresh project
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const systemPrompt = `You are the AI Concierge for TeethPark Dental Clinic in Kovur, Chennai.
         Dr. Madhan (Pediatric Dentist). Mon-Sat 4-9pm, Sun 10am-1pm.
