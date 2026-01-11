@@ -3,6 +3,7 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
 import beforeImg from '../assets/teeth_before.png';
 import afterImg from '../assets/teeth_after.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const services = [
