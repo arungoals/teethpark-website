@@ -1,35 +1,47 @@
 :root {
-  /* Eco-Park Palette */
-  --color-primary: #0288D1; /* Professional Blue */
-  --color-secondary: #81C784; /* Soft Green */
-  --color-accent: #FDD835; /* Playful Yellow */
-  --color-bg-soft: #E0F7FA; /* Light Blue Background */
-  --color-bg-warm: #FFF3E0; /* Warm Cream */
-  --color-text-main: #37474F; /* Dark Blue Grey */
-  --color-text-light: #546E7A;
-  --color-white: #FFFFFF;
+  /* Indianized US Dental Palette */
+  --color-primary: #0f172a;
+  /* Deep Royal Blue - Trust */
+  --color-secondary: #0e7490;
+  /* Cyan Blue - Hygiene */
+  --color-accent: #d97706;
+  /* Gold - Premium/Indian Touch */
+
+  --color-bg-soft: #f8fafc;
+  /* Cool Grey/White - Cleanliness */
+  --color-bg-warm: #fffbf0;
+  /* Warm Cream - Welcoming */
+
+  --color-text-main: #334155;
+  /* Slate - Readable */
+  --color-text-light: #64748b;
+  /* Lighter Slate */
+  --color-white: #ffffff;
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  /* Premium, authoritative */
   --font-body: 'Inter', sans-serif;
+  /* Clean, modern */
 
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 4rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 5rem;
 
   /* Borders */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-float: 0 8px 24px rgba(0,0,0,0.12);
+  /* Shadows - More subtle/premium */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-float: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-gold: 0 4px 14px 0 rgba(217, 119, 6, 0.39);
 }
 
 body {
@@ -41,7 +53,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   margin-top: 0;
@@ -85,6 +102,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Utilities */
-.text-center { text-align: center; }
-.flex-center { display: flex; align-items: center; justify-content: center; }
-.w-full { width: 100%; }
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}

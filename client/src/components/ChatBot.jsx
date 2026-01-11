@@ -30,7 +30,6 @@ const ChatBot = () => {
         setIsLoading(true);
 
         try {
-            // Use env var or default to local (Note: ensure VITE_API_URL is set in prod)
             const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
 
             const response = await fetch(`${API_URL}/api/chat`, {
@@ -40,20 +39,20 @@ const ChatBot = () => {
             });
 
             if (!response.ok) {
-                throw new Error(`Server status: ${response.status}`);
+                const errData = await response.json();
+                throw new Error(errData.details || `Server status: ${response.status}`);
             }
 
             const data = await response.json();
-
-            // Validate response data
-            const botResponse = data.response || "I'm having trouble thinking right now. Please call the clinic directly.";
+            const botResponse = data.response;
 
             setMessages(prev => [...prev, { text: botResponse, isUser: false }]);
         } catch (error) {
             console.error("Chatbot Error:", error);
             setMessages(prev => [...prev, {
                 text: "My connection to the clinic is weak right now. Please call us at +91 94868 46534 for immediate help.",
-                isUser: false
+                isUser: false,
+                isError: true
             }]);
         } finally {
             setIsLoading(false);
