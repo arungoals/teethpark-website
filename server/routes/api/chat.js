@@ -17,7 +17,8 @@ router.post('/', async (req, res) => {
             });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        // Use the newer, faster model
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         // Enhanced System Prompt with Indian context
         const systemPrompt = `You are the AI Concierge for TeethPark Dental Clinic, located in Kovur, Chennai. 
