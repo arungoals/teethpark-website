@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
+import logo from '../assets/logo_new.jpg';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -22,9 +24,27 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
+    const handleNavClick = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            const offset = 80; // Adjust for sticky header height
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+        setIsOpen(false);
+    };
+
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-            {/* Top Bar - Very common in Medical sites */}
+            {/* Top Bar */}
             <div className="top-bar">
                 <div className="container top-bar-content">
                     <div className="contact-info">
@@ -40,16 +60,15 @@ const Navbar = () => {
 
             <nav className="navbar">
                 <div className="container navbar-container">
-                    <Link to="/" className="navbar-logo">
-                        <span className="logo-text">Teeth<span className="highlight">Park</span></span>
-                        {/* <img src={logo} alt="TeethPark" className="logo-img" /> */}
-                    </Link>
+                    <a href="#" className="navbar-logo" onClick={(e) => handleNavClick(e, 'home')}>
+                        <img src={logo} alt="TeethPark Logo" className="logo-img" />
+                    </a>
 
                     <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-                        <Link to="/" onClick={toggleMenu}>Home</Link>
-                        <Link to="/services" onClick={toggleMenu}>Services</Link>
-                        <Link to="/about" onClick={toggleMenu}>Dr. Madhan</Link>
-                        <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+                        <a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
+                        <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a>
+                        <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>Dr. Madhan</a>
+                        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
                         <Link to="/book" className="btn btn-accent nav-btn" onClick={toggleMenu}>Book Appointment</Link>
                     </div>
 

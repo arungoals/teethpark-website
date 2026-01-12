@@ -22,15 +22,11 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<Booking />} />
             <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>
         <Footer />
-        <ChatBot />
         <FloatingWhatsApp />
       </div>
     </Router>

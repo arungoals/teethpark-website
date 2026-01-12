@@ -91,6 +91,17 @@
     color: white;
 }
 
+.btn-outline-white {
+    background: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.btn-outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
 /* Trust Indicators */
 .trust-indicators {
     display: flex;

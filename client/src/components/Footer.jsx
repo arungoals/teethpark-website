@@ -6,16 +6,16 @@ const Footer = () => {
             <div className="container footer-grid">
                 <div className="footer-section brand-section">
                     <h3>Teeth<span className="highlight">Park</span></h3>
-                    <p>Your child's smile is our priority. Experience gentle, pain-free dentistry in a fun, park-like atmosphere.</p>
+                    <p>Your family's smile sanctuary. Gentle, pain-free dentistry in a lush, park-like environment.</p>
                 </div>
 
                 <div className="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Explore</h4>
                     <ul className="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/services">Our Services</a></li>
-                        <li><a href="/about">Dr. Madhan</a></li>
-                        <li><a href="/book">Book Appointment</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">Dr. Madhan</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -26,9 +26,6 @@ const Footer = () => {
                         Kovur, Chennai - 600128<br />
                         (Opposite Kanaga Hospital)
                     </address>
-                    <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="map-link">
-                        📍 Get Directions
-                    </a>
                 </div>
 
                 <div className="footer-section">
@@ -37,12 +34,17 @@ const Footer = () => {
                     <p className="contact-item">✉️ <a href="mailto:madhancg@gmail.com">madhancg@gmail.com</a></p>
                     <div className="hours-box">
                         <p>Mon-Sat: 4pm - 9pm</p>
-                        <p>Sun: 10am - 1pm (Appt)</p>
+                        <p>Sun: 10am - 1pm (Appt Only)</p>
                     </div>
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} TeethPark Dental Clinic. Designed with ❤️ in Chennai.</p>
+                <div className="container footer-bottom-content">
+                    <p>&copy; {new Date().getFullYear()} TeethPark Dental Clinic. All Rights Reserved.</p>
+                    <div className="footer-meta-links">
+                        <Link to="/admin" className="admin-link">Staff Login</Link>
+                    </div>
+                </div>
             </div>
         </footer>
     );

@@ -1,47 +1,46 @@
 :root {
-  /* Indianized US Dental Palette */
-  --color-primary: #0f172a;
-  /* Deep Royal Blue - Trust */
-  --color-secondary: #0e7490;
-  /* Cyan Blue - Hygiene */
-  --color-accent: #d97706;
-  /* Gold - Premium/Indian Touch */
+  /* TeethPark "Park-Themed" Palette */
+  --color-primary: #1B4D3E;
+  /* Deep Forest Green (from Logo) */
+  --color-secondary: #4CAF50;
+  /* Leafy Green (from Logo) */
+  --color-accent: #E8F5E9;
+  /* Soft Mint / Background Accent */
+  --color-text: #2C3E50;
+  --color-text-light: #5A6C7D;
+  --color-white: #FFFFFF;
+  --color-bg: #F9FBFA;
+  /* Very light herbal tint */
 
-  --color-bg-soft: #f8fafc;
-  /* Cool Grey/White - Cleanliness */
-  --color-bg-warm: #fffbf0;
-  /* Warm Cream - Welcoming */
-
-  --color-text-main: #334155;
-  /* Slate - Readable */
-  --color-text-light: #64748b;
-  /* Lighter Slate */
-  --color-white: #ffffff;
+  /* Gradations */
+  --gradient-primary: linear-gradient(135deg, #1B4D3E 0%, #4CAF50 100%);
+  --gradient-soft: linear-gradient(to right, #F4F9F2, #FFFFFF);
 
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
-  /* Premium, authoritative */
-  --font-body: 'Inter', sans-serif;
-  /* Clean, modern */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2.5rem;
-  --spacing-xl: 5rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(27, 77, 62, 0.1);
+  --shadow-md: 0 10px 20px rgba(27, 77, 62, 0.08);
+  --shadow-lg: 0 15px 35px rgba(27, 77, 62, 0.12);
 
   /* Borders */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* Shadows - More subtle/premium */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-float: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-gold: 0 4px 14px 0 rgba(217, 119, 6, 0.39);
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {

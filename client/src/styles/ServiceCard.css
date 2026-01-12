@@ -1,83 +1,69 @@
 /* Service Card Styles */
 .service-card {
-    background: white;
-    padding: 2rem;
+    background: var(--color-white);
+    padding: 2.5rem;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-slow);
+    border: 1px solid rgba(27, 77, 62, 0.05);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-float);
-    border-color: var(--color-accent);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
 }
 
 .service-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    background: var(--color-bg-soft);
-    width: 60px;
-    height: 60px;
+    background: var(--color-accent);
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    color: var(--color-primary);
 }
 
 .service-title {
-    font-size: 1.25rem;
-    font-family: var(--font-heading);
+    font-size: 1.5rem;
     color: var(--color-primary);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .service-description {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--color-text-light);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    line-height: 1.7;
     flex-grow: 1;
 }
 
 .service-link {
-    color: var(--color-accent);
-    font-weight: 600;
+    color: var(--color-secondary);
+    font-weight: 700;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: padding 0.2s;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
 }
 
 .service-link:hover {
-    padding-left: 5px;
+    letter-spacing: 2px;
 }
 
-/* Home Page Specific Helpers */
-.section-padding {
-    padding: 5rem 0;
-}
-
-.bg-warm {
-    background-color: var(--color-bg-warm);
-}
-
-.bg-soft {
-    background-color: var(--color-bg-soft);
-}
-
+/* Section Header Shorthand */
 .section-header {
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 4rem;
 }
 
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--color-primary);
+.section-header .badge {
     margin-bottom: 1rem;
 }
 
@@ -85,32 +71,7 @@
     color: var(--color-text-light);
     max-width: 600px;
     margin: 0 auto;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.cta-section {
-    background: var(--color-primary);
-    padding: 6rem 0;
-    text-align: center;
-    color: white;
-}
-
-.cta-content h2 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.cta-content p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
 }
 
 .shine-effect {
@@ -125,7 +86,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: shine 3s infinite;
 }
 

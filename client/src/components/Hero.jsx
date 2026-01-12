@@ -1,46 +1,59 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
-import heroBg from '../assets/hero_background.png'; // Assuming generated image will be moved here
+import heroImg from '../assets/hero_park_family.png';
 
 const Hero = () => {
+    const [offsetY, setOffsetY] = useState(0);
+
+    const handleScroll = () => {
+        setOffsetY(window.pageYOffset);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <section className="hero">
+            <div
+                className="hero-parallax-bg"
+                style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+            >
+                <img src={heroImg} alt="Happy Indian Family in Park" />
+            </div>
+            <div className="hero-overlay"></div>
+
             <div className="container hero-container">
-                <div className="hero-content">
-                    <span className="badge">✨ Best Pediatric Care in Kovur</span>
+                <div className="hero-content" style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
+                    <span className="badge">🌱 Welcome to the Smile Park</span>
                     <h1 className="hero-title">
                         Gentle Dental Care <br />
-                        <span className="highlight">For Your Little Ones</span>
+                        <span className="highlight">For Your Whole Family</span>
                     </h1>
                     <p className="hero-subtitle">
-                        TeethPark combines world-class dental expertise with a fun, child-friendly atmosphere.
-                        Dr. C G Madhan ensures a pain-free, happy smile for every child.
+                        Experience world-class dentistry in a calming, park-themed environment.
+                        Dr. C G Madhan transforms dental visits into a joyful journey.
                     </p>
                     <div className="hero-actions">
                         <Link to="/book" className="btn btn-primary btn-lg shine-effect">
-                            Book an Appointment
+                            Book Free Appointment
                         </Link>
-                        <Link to="/services" className="btn btn-outline">
-                            View Services
-                        </Link>
+                        <a href="#services" className="btn btn-outline-white">
+                            Explore Services
+                        </a>
                     </div>
                     <div className="trust-indicators">
                         <div className="trust-item">
-                            <span className="stat">10+</span>
+                            <span className="stat">14+</span>
                             <span className="label">Years Exp</span>
                         </div>
                         <div className="divider-v"></div>
                         <div className="trust-item">
-                            <span className="stat">5k+</span>
+                            <span className="stat">10k+</span>
                             <span className="label">Happy Smiles</span>
                         </div>
-                    </div>
-                </div>
-                <div className="hero-image-wrapper">
-                    {/* Placeholder for a nice dental illustration or photo - using a div for now or existing img */}
-                    <img src={heroBg} alt="Happy Kid at Dentist" className="hero-img" />
-                    <div className="floating-card card-1">
-                        <span>🦷 Root Canal Specialist</span>
                     </div>
                 </div>
             </div>
